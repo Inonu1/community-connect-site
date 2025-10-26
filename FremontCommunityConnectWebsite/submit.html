@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Submit an Opportunity – Fremont Community Connect</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Professional form styling -->
+  <style>
+    :root{--form-bg:#ffffff;--field-border:#ccd6e6;--focus:#0052cc}
+
+    .form-wrap{max-width:840px;margin:auto;background:var(--form-bg);padding:40px;border-radius:8px;box-shadow:0 4px 16px rgba(0,0,0,.06)}
+    .form-wrap h2{margin-bottom:8px}
+    .form-wrap>p{margin-bottom:25px;color:#555}
+
+    label{font-weight:600;font-size:.9rem;margin:12px 0 4px;display:block}
+    input,textarea,select{width:100%;padding:10px 12px;border:1px solid var(--field-border);border-radius:4px;font-size:1rem;transition:border .2s,box-shadow .2s}
+    input:focus,textarea:focus,select:focus{outline:none;border-color:var(--focus);box-shadow:0 0 0 3px rgba(0,82,204,.15)}
+
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    .check-grp{display:flex;align-items:center;gap:8px;margin-top:8px}
+    .check-grp input{width:auto}
+    .file-block{margin-top:8px}
+    .btn{width:100%;text-align:center;margin-top:30px}
+
+    @media(max-width:700px){.grid-2{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <strong><a href="index.html">Fremont Community Connect</a></strong>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="opportunities.html">Join</a>
+      <a href="submit.html">Submit</a>
+      <a href="archive.html">Archive</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section class="form-wrap">
+    <h2>Submit a Service Opportunity</h2>
+    <p>Tell us about your project so students and volunteers can find you. Fields marked * are required.</p>
+
+    <form onsubmit="alert('Demo: connect to back-end or Google Forms.');return false" enctype="multipart/form-data">
+      <!-- 1-4  Org & contact -->
+      <div class="grid-2">
+        <div>
+          <label>Organization / Non-profit *</label>
+          <input type="text" name="org" required>
+        </div>
+        <div>
+          <label>Contact Person *</label>
+          <input type="text" name="name" required>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div>
+          <label>Contact E-mail *</label>
+          <input type="email" name="email" required>
+        </div>
+        <div>
+          <label>Contact Phone</label>
+          <input type="tel" name="phone">
+        </div>
+      </div>
+
+      <!-- 5-7  Project info -->
+      <label>Opportunity Title *</label>
+      <input type="text" name="title" required>
+
+      <label>Short Blurb (one-sentence teaser) *</label>
+      <input type="text" name="blurb" maxlength="120" required>
+
+      <label>Full Description *</label>
+      <textarea name="description" rows="5" required></textarea>
+
+      <!-- 8-12  Logistics -->
+      <div class="grid-2">
+        <div>
+          <label>Date(s) of Service *</label>
+          <input type="text" name="dates" placeholder="e.g.  July 15, 2025  OR  Every Saturday" required>
+        </div>
+        <div>
+          <label>Location *</label>
+          <input type="text" name="location" placeholder="Address or &quot;Remote / Virtual&quot;" required>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div>
+          <label>Time Commitment</label>
+          <input type="text" name="time" placeholder="e.g.  3 hrs total  OR  9-12 pm shift">
+        </div>
+        <div>
+          <label>Volunteer Spots Available</label>
+          <input type="number" name="spots" min="1">
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div>
+          <label>Minimum Age (if any)</label>
+          <input type="number" name="min_age" min="0">
+        </div>
+        <div>
+          <label>Background Check Required?</label>
+          <select name="bg_check">
+            <option value="No">No</option>
+            <option value="Yes">Yes</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- 13  Skills -->
+      <label>Skills / Items Needed (optional)</label>
+      <textarea name="skills" rows="2" placeholder="e.g.  power drill, gardening gloves, fluent Spanish"></textarea>
+
+      <!-- 14  File upload -->
+      <label>Attach File (flyer, waiver, photo)</label>
+      <input type="file" name="attachment" class="file-block">
+
+      <!-- 15  Source -->
+      <label>How did you hear about us?</label>
+      <select name="source">
+        <option value="">-- choose --</option>
+        <option>City of Fremont</option>
+        <option>Fremont Unified School District</option>
+        <option>Social Media</option>
+        <option>Another Non-profit</option>
+        <option>Web Search</option>
+        <option>Other</option>
+      </select>
+
+      <!-- 16  Notes -->
+      <label>Extra Notes / Questions</label>
+      <textarea name="notes" rows="3"></textarea>
+
+      <!-- 17  Consent -->
+      <div class="check-grp">
+        <input type="checkbox" id="consent" required>
+        <label for="consent" style="margin:0;font-weight:normal">I consent to Fremont Community Connect storing these details for volunteer-matching purposes.</label>
+      </div>
+
+      <button class="btn" type="submit">Submit Opportunity</button>
+    </form>
+  </section>
+</main>
+
+<footer>© 2025 Fremont Community Connect</footer>
+
+</body>
+</html>
